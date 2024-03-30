@@ -1,0 +1,15 @@
+{
+  "APP": {
+    "PREFIX": "/go-project"
+  },
+  "JWT_TOKEN": {
+    "EXPIRY_TIME": 3,
+    "EXPIRY_TIME_IN_SECONDS": 10800,
+    "TOKEN_SECRET": "ViNaY :)",
+    "TOKEN_ISSUER": "Vinay"
+  },
+  "KAFKA": {
+    "CONSUMER_GROUP": "my_group",
+    "CONSUMER_TOPIC": "my_topic"
+  }
+}
