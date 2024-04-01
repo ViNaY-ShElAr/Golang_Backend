@@ -17,6 +17,7 @@ import (
 	"GO_PROJECT/kafka"
 	"GO_PROJECT/logger"
 	indexRoute "GO_PROJECT/routes"
+	"GO_PROJECT/utils"
 )
 
 var exCh = make(chan os.Signal, 3)
@@ -92,6 +93,8 @@ func main() {
 		http.ListenAndServe(":"+os.Getenv("PORT"), nil)
 		fmt.Println("Server is running on port", os.Getenv("PORT"))
 	}()
+
+	utils.StartKafkaConsumer()
 
 	// Wait for all goroutines to finish
 	wg.Wait()
