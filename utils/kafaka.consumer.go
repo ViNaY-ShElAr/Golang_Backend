@@ -3,6 +3,7 @@ package utils
 import (
 	kf "GO_PROJECT/kafka"
 	"GO_PROJECT/model"
+	"GO_PROJECT/db/cassandra"
 	"context"
 	"encoding/json"
 	"fmt"
@@ -43,6 +44,7 @@ func StartKafkaConsumer() {
 			}
 
 			// Insert data in the database
+			cassandra.InsertMessagedata(messageData)
 		}
 	}
 }

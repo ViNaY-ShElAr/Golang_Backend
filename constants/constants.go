@@ -53,6 +53,9 @@ var ResponseConstants = struct {
 	Home struct {
 		Success Response
 	}
+	KafkaProducer struct {
+		Success Response
+	}
 }{
 	General: struct {
 		OK                    Response
@@ -96,6 +99,11 @@ var ResponseConstants = struct {
 		Success Response
 	}{
 		Success: Response{HTTP_STATUS: StatusCodes.OK, MESSAGE: "Home page"},
+	},
+	KafkaProducer: struct {
+		Success Response
+	}{
+		Success: Response{HTTP_STATUS: StatusCodes.OK, MESSAGE: "Kafka Data Produced Sucessfully"},
 	},
 }
 

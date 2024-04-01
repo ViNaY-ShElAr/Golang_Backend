@@ -2,6 +2,7 @@ package cassandra
 
 import (
 	"GO_PROJECT/model"
+	"github.com/gocql/gocql"
 )
 
 func GetUser(email string) (map[string]interface{}, error) {
@@ -30,6 +31,21 @@ func AddUser(userData model.User) error {
 		userData.Role,
 		userData.CreatedAt,
 		userData.UpdatedAt,
+	).Exec()
+
+	return err
+}
+
+func InsertMessagedata(messageData model.MessageData) error {
+	query := `INSERT INTO messages (message_id, sender_id, receiver_no, body)
+              VALUES (?, ?, ?, ?)`
+
+	// Execute the query
+	err := CassandraSession.Query(query,
+		gocql.TimeUUID(),
+		messageData.SenderId,
+		messageData.RecieverNo,
+		messageData.Body,
 	).Exec()
 
 	return err

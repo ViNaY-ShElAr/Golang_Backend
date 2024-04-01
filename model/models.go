@@ -89,6 +89,6 @@ type JwtData struct {
 
 type MessageData struct {
 	SenderId string `json:"sender_id"`
-	To string `json:"to"`
-	Body string `json:"body"`
+	RecieverNo string `json:"reciever_no"`
+	Body interface{} `json:"body"`
 }

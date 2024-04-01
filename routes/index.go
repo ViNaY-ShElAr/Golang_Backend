@@ -23,4 +23,5 @@ func RegisterRoutes(r *mux.Router) {
 	routes.RegisterLoginRoutes(subRouter)
 	routes.RegisterHomeRoutes(subRouter)
 	routes.RegisterLogoutRoutes(subRouter)
+	routes.RegisterKafkaProducerRoutes(subRouter)
 }
